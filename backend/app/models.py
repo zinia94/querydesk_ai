@@ -10,6 +10,7 @@ class DocumentUpload(BaseModel):
 
 class SearchRequest(BaseModel):
     query: str
+    department: str = None,
     top_k: int = 5
 
 class SearchResult(BaseModel):
