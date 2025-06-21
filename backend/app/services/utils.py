@@ -1,7 +1,7 @@
 import re
 import time
-from app.embedding import embed_text
-from app.elastic import index_document
+from app.services.embedding import embed_text
+from app.services.elastic import index_document
 import fitz  # PyMuPDF
 import docx
 from typing import BinaryIO

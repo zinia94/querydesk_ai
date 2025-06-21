@@ -1,9 +1,9 @@
 from typing import List
-from app.utils import extract_text_from_docx, extract_text_from_pdf, process_and_index_text
+from app.services.utils import extract_text_from_docx, extract_text_from_pdf, process_and_index_text
 from fastapi import APIRouter, UploadFile, File, Form, HTTPException
 
-from app.elastic import delete_all_by_document_id, get_full_document_text_by_group, search_similar_documents
-from app.embedding import embed_text
+from app.services.elastic import delete_all_by_document_id, get_full_document_text_by_group, search_similar_documents
+from app.services.embedding import embed_text
 from app.models import DocumentUpload, SearchRequest, SearchResult
 
 router = APIRouter()

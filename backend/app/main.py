@@ -1,11 +1,12 @@
 
 from app.seed_data import insert_seed_data
-from app.elastic import does_index_exist, setup_index
+from app.services.elastic import does_index_exist, setup_index
 from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.search_api import router as search_router
+from app.api.search import router as search_router
 from app.config import settings
+from app.api.search import router as search_router
 
 load_dotenv()
 
@@ -34,7 +35,5 @@ app.add_middleware(
     allow_methods=["*"],  # Allows all methods
     allow_headers=["*"],  # Allows all headers
 )
-
-
 
 app.include_router(search_router)

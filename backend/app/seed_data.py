@@ -1,4 +1,4 @@
-from app.utils import process_and_index_text
+from app.services.utils import process_and_index_text
 import uuid
 
 seed_documents = [
