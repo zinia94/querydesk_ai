@@ -3,7 +3,6 @@
 
 **QueryDesk\_AI** is a semantic search platform built with a FastAPI backend and a React (TypeScript) frontend. It enables users to upload internal documents (text, PDF, or DOCX), organize them by department, and perform intelligent semantic search with reranking, powered by Elasticsearch.
 
----
 
 ## Features
 
@@ -16,7 +15,6 @@
 * Delete documents directly from the frontend
 * Automatic Elasticsearch index creation
 
----
 
 ## Tech Stack
 
@@ -28,18 +26,15 @@
 | Embeddings   | `all-MiniLM-L6-v2` via HuggingFace  |
 | File Parsing | `pdfplumber`, `python-docx`         |
 
----
 
 ## Getting Started
 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourname/querydesk_ai.git
+git clone https://github.com/zinia94/querydesk_ai.git
 cd querydesk_ai
 ```
-
----
 
 ### 2. Run Elasticsearch (Docker)
 
@@ -76,8 +71,6 @@ Once application tasks are complete, the Elasticsearch container can be shut dow
 
 This ensures that resources are freed and the search service is gracefully terminated.
 
----
-
 ### 3. Backend Setup
 
 ```bash
@@ -90,7 +83,6 @@ uvicorn app.main:app --reload
 
 `.env` should contain backend config (Elasticsearch URL, index name, model, etc.)
 
----
 
 ### 4. Frontend Setup
 
@@ -105,8 +97,6 @@ Frontend environment variables must be defined in `frontend/.env`, for example:
 ```env
 REACT_APP_API_BASE_URL=http://localhost:8000
 ```
-
----
 
 ## Running Tests (Backend)
 
@@ -127,16 +117,8 @@ PYTHONPATH=. pytest
 
 > Note: The `PYTHONPATH=. ` prefix ensures test files can import from the `app/` module correctly.
 
-### Test files are located in:
+Test files are located in `backend/tests` directory
 
-```
-backend/
-└── tests/
-    ├── test_app.py
-    ├── test_health.py
-```
-
----
 
 
 ## API Overview
@@ -148,8 +130,6 @@ backend/
 | `/upload-file`                  | POST   | Upload a file (.pdf, .docx)       |
 | `/delete/doc_id/{doc_id}`       | DELETE | Delete all chunks by `doc_id`     |
 | `/document/full/{key}/{doc_id}` | GET    | Retrieve the full merged document |
-
----
 
 ## Folder Structure
 
@@ -175,6 +155,9 @@ querydesk_ai/
 │   │   ├── check_elasticsearch.py
 │   │   ├── start_elasticsearch.sh
 │   │   └── stop_elasticsearch.sh
+│   ├── tests/
+|   |   ├── test_app.py
+|   |   └── test_health.py
 │   ├── requirements.txt
 │   └── .env
 ├── frontend/
@@ -189,16 +172,12 @@ querydesk_ai/
 ├── README.md
 ```
 
----
-
 ## Future Improvements
 
 * Document versioning
 * User authentication and access control
 * Multi-language embedding support
 * Usage analytics dashboard
-
----
 
 ## About
 
