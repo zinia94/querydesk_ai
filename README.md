@@ -73,16 +73,45 @@ This ensures that resources are freed and the search service is gracefully termi
 
 ### 3. Backend Setup
 
+
 ```bash
 cd backend
 python -m venv venv
 source venv/bin/activate  # or venv\Scripts\activate on Windows
 pip install -r requirements.txt
 uvicorn app.main:app --reload
-```
+````
 
 `.env` should contain backend config (Elasticsearch URL, index name, model, etc.)
 
+#### Seed Documents
+
+To help with initial testing and demonstration, the backend includes logic to **automatically insert seed documents** into Elasticsearch when the application starts, but only if the index does not already exist.
+
+This behavior is controlled by the `insert_seed_data` setting in the `.env` file:
+
+```env
+# .env
+insert_seed_data=true
+```
+
+When enabled, the following happens at startup:
+
+* The backend checks if the configured Elasticsearch index exists.
+* If it doesn’t, the index is created.
+* If `insert_seed_data` is set to `true`, predefined seed documents are inserted automatically.
+
+This logic is handled in `main.py`. You can find or customize the seed content in:
+
+```
+backend/app/seed_data.py
+```
+
+This feature is useful for:
+
+* Demo setups
+* Development and testing environments
+* Verifying UI/UX without manual uploads
 
 ### 4. Frontend Setup
 
@@ -143,7 +172,7 @@ querydesk_ai/
 │   │   ├── seed_data.py
 │   │   ├── api/
 │   │   │   ├── __init__.py
-│   │   │   └── search_api.py
+│   │   │   └── search.py
 │   │   ├── services/
 │   │   │   ├── __init__.py
 │   │   │   ├── elastic.py

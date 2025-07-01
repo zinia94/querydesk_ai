@@ -6,15 +6,15 @@ from pydantic import BaseModel
 class DocumentUpload(BaseModel):
     id: Optional[str] = None
     text: str
-    metadata: Optional[dict] = {}
+    metadata: Optional[dict] = None
 
 class SearchRequest(BaseModel):
     query: str
-    department: str = None,
+    department: Optional[str] = None,
     top_k: int = 5
 
 class SearchResult(BaseModel):
     id: str
     score: float
     text: str
-    metadata: Optional[Dict] = {}
+    metadata: Optional[Dict] = None
