@@ -201,6 +201,13 @@ querydesk_ai/
 ├── README.md
 ```
 
+## Project Demo
+
+The frontend of QueryDesk_AI is built using React with TypeScript, offering a clean, responsive interface for uploading documents, performing semantic search, and managing document results. The interface is designed with usability in mind, making it easy for employees across departments to interact with internal documents in a meaningful and efficient way.<img width="468" height="86" alt="image" src="https://github.com/user-attachments/assets/0959b08b-eefb-4426-91fb-880688cd874a" />
+
+<img width="467" height="294" alt="image" src="https://github.com/user-attachments/assets/9b0fb35b-e4f9-4fe7-8f9d-6e287235a796" />
+
+
 ## Future Improvements
 
 * Document versioning
