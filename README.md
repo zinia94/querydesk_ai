@@ -214,7 +214,3 @@ The frontend of QueryDesk_AI is built using React with TypeScript, offering a cl
 * User authentication and access control
 * Multi-language embedding support
 * Usage analytics dashboard
-
-## About
-
-QueryDesk\_AI was developed as part of a Master's Business Project in Computer Science, with a focus on bridging AI-powered semantic search and real-world enterprise document workflows.
